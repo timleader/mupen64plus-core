@@ -97,13 +97,13 @@ unsigned int cart_rom_dma_read(void* opaque, const uint8_t* dram, uint32_t dram_
 		{
 			uint32_t val = msg[idx];
 			msg[idx] = 
-				((val >> 24) & 0xff) | // move byte 3 to byte 0
-				((val << 8) & 0xff0000) | // move byte 1 to byte 2
-				((val >> 8) & 0xff00) | // move byte 2 to byte 1
-				((val << 24) & 0xff000000); // byte 0 to byte 3
+				((val >> 24) & 0xff) | 
+				((val << 8) & 0xff0000) | 
+				((val >> 8) & 0xff00) | 
+				((val << 24) & 0xff000000); 
 		}
 
-		DebugMessage(M64MSG_INFO, "ed64io log: %s", (char*)msg);
+		DebugMessage(M64MSG_INFO, "ED64IO LOG: %s", (char*)msg);
 	}
 	else
 	{
